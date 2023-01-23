@@ -87,6 +87,21 @@ export default function LotteryEntrance() {
         }
     }
 
+    const [provider, setProvider] = useState()
+    useEffect(() => {
+        if (isWeb3Enabled) {
+            updateUIValues()
+            const raffleContract = new ethers.Contract(raffleAddress, abi, provider.web3)
+            raffleContract.on("WinnerPicked", async () => {
+                console.log("Winner picked!")
+                updateUIValues()
+            })
+        }
+        Moralis.onWeb3Enabled((provider) => {
+            setProvider(provider)
+        })
+    }, [isWeb3Enabled])
+
     return (
         <div className="p-5">
             <h1 className="py-4 px-4 font-bold text-3xl">Lottery</h1>
