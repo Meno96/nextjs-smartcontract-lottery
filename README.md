@@ -1,38 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+    Hardhat Lottery
+</h1>
 
-## Getting Started
+<br/>
 
-First, run the development server:
+This project is a decentralized lottery where anyone can join and after a set time period a winner will be awarded, all of this is automated.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<hr/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🗎&nbsp; Requirements
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+    You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+    
+- [Nodejs](https://nodejs.org/en/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    You'll know you've installed nodejs right if you can run: `node --version` and get an ouput like: `vx.x.x`
+- [Yarn](https://yarnpkg.com/getting-started/install) instead of `npm`
+   
+   You'll know you've installed yarn right if you can run: `yarn --version` and get an output like: `x.x.x`
+   
+   You might need to [install it with `npm`](https://classic.yarnpkg.com/lang/en/docs/install/) or `corepack`
+   
+## 🛠️&nbsp; How to run
+- Clone the repo:
+    ```
+    git clone https://github.com/Meno96/nextjs-smartcontract-lottery.git
+    ```
+- Enter the directory:
+    ```
+    cd nextjs-smartcontract-lottery
+    ```
+- Install packages:
+    ```
+    yarn
+    ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🚀&nbsp; How it's suppose to work?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Run your local blockchain with the lottery code
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  > In a different terminal / command line
 
-## Learn More
+  ```
+  git clone https://github.com/Meno96/hardhat-smartcontract-lottery.git
+  ```
+  ```
+  cd hardhat-smartcontract-lottery
+  ```
+  ```
+  yarn
+  ```
+  ```
+  yarn hardhat node
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+  > You can read more about how to use that repo from its [README.md](https://github.com/Meno96/hardhat-smartcontract-lottery/blob/master/README.md)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Add hardhat network to your metamask/wallet
 
-## Deploy on Vercel
+  - Get the RPC_URL of your hh node (usually `http://127.0.0.1:8545/`)
+  - Go to your wallet and add a new network. [See instructions here.](https://metamask.zendesk.com/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC)
+    - Network Name: Hardhat-Localhost
+    - New RPC URL: http://127.0.0.1:8545/
+    - Chain ID: 31337
+    - Currency Symbol: ETH (or GO)
+    - Block Explorer URL: None
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Ideally, you'd then [import one of the accounts](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account) from hardhat to your wallet/metamask. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Run this code
+
+  Back in a different terminal with the code from this repo, run:
+
+  ```
+  yarn dev
+  ```
+- Go to UI and have fun!
+
+ <p align="center">
+    <img width="80%" src="./assets/GitHubImages/screen3.png" alt="Lottery">
+</p>
+
+## 🏴‍☠️&nbsp; Backend
+You can find the backend part in [this repository](https://github.com/Meno96/hardhat-smartcontract-lottery.git)
+
+## 📫&nbsp; Have a question? Want to chat? 
+
+[LinkedIn](https://www.linkedin.com/in/daniele-menin/)
+
+[Instagram](https://www.instagram.com/danielemeno96/)
