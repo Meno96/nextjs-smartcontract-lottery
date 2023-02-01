@@ -8,8 +8,10 @@ export default function LotteryEntrance() {
     const { Moralis, isWeb3Enabled, chainId: chainIdHex } = useMoralis()
     // These get re-rendered every time due to our connect button!
     const chainId = parseInt(chainIdHex)
+    console.log(`ChainId is ${chainId}`)
     const raffleAddress = chainId in contractAddresses ? contractAddresses[chainId][0] : null
     console.log(raffleAddress)
+
     // State hooks
     const [entranceFee, setEntranceFee] = useState("0")
     const [numberOfPlayers, setNumberOfPlayers] = useState("0")
@@ -86,21 +88,6 @@ export default function LotteryEntrance() {
             console.log(error)
         }
     }
-
-    const [provider, setProvider] = useState()
-    useEffect(() => {
-        if (isWeb3Enabled) {
-            updateUIValues()
-            const raffleContract = new ethers.Contract(raffleAddress, abi, provider.web3)
-            raffleContract.on("WinnerPicked", async () => {
-                console.log("Winner picked!")
-                updateUIValues()
-            })
-        }
-        Moralis.onWeb3Enabled((provider) => {
-            setProvider(provider)
-        })
-    }, [isWeb3Enabled])
 
     return (
         <div className="p-5">
