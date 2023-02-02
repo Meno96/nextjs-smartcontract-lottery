@@ -5,7 +5,7 @@
 <br/>
 
 This project is a decentralized lottery where anyone can join and after a set time period a winner will be awarded, all of this is automated.
-
+ 
 <hr/>
 
 ## 🗎&nbsp; Requirements
